@@ -1,0 +1,10 @@
+{
+    "group_id": "00000",
+    "subgroup": "0",
+    "approx_wait_time": 300,
+    "login": "111111",
+    "password": "Password123",
+    "base_url": "https://moodle.herzen.spb.ru/",
+    "schedule_provider_url": "https://herzen-timetable.herokuapp.com/api/timetable/group_forCurrentWeek",
+    "schedule_expiration_date": "2020-10-01 23:59"
+}
