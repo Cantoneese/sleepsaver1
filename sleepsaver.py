@@ -224,7 +224,7 @@ for i in range(len(schedule)):
     lesson = schedule[i]
 
     # skipping lessons which are already over
-    if not int(lesson["start_time"]) < current_time() <= int(lesson["end_time"]):
+    if not int(lesson["start_time"]) <= current_time() <= int(lesson["end_time"]):
         continue
 
     # open course
