@@ -9,6 +9,7 @@ import requests
 import platform
 import sys
 
+version = "1.0"
 
 # returns current time in XXXX format (no delimiter, int)
 def current_time():
@@ -163,6 +164,16 @@ variation = round(approx_wait_time * 0.25)
 # parsing start and end times for today from the schedule
 start_time = int(schedule[0]["start_time"])
 end_time = int(schedule[-1]["end_time"])
+
+# output flex
+print(f"""
+   ______             ____                 
+  / __/ /__ ___ ___  / __/__ __  _____ ____
+ _\ \/ / -_) -_) _ \_\ \/ _ `/ |/ / -_) __/
+/___/_/\__/\__/ .__/___/\_,_/|___/\__/_/   
+             /_/                     v. {version}      
+                                     
+""")
 
 # begin the cycle
 print(f"Sleepsaver started at {str(datetime.now().time())[:5]}, have a rest.")
