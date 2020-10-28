@@ -248,7 +248,7 @@ for i in range(len(schedule)):
     sleep(randint(5, 10))
     # refresh periodically until lesson is over
     while True:
-        if not int(lesson["start_time"]) < current_time() <= int(lesson["end_time"]):
+        if not int(lesson["start_time"]) <= current_time() <= int(lesson["end_time"]):
             break
         wait_time = approx_wait_time + randint(variation * -1, variation)
         print(f"{log_time()}: Refreshing in {wait_time} seconds.")
