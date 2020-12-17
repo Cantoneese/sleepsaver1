@@ -44,27 +44,32 @@ def expired(timestamp_):
 
 
 # returns the number of seconds until target
-def until(target):
+def until(target=None):
     now = datetime.now()
 
     if type(target) is int and 0 < target % 100 < 24 and 0 < target / 100 < 60:
-        target_hour = target % 100
-        target_minute = target / 100
-        dt_target = now.replace(hour=target_hour, minute=target_minute)
+        target_hour = target / 100
+        target_minute = target % 100
+        target_second = 0
     else:
-        dt_target = now.replace(hour=23, minute=59, second=59)
+        target_hour = 23
+        target_minute = 59
+        target_second = 59
+
+    dt_target = now.replace(hour=target_hour, minute=target_minute, second=target_second)
 
     result = \
         ((dt_target.hour - now.hour) * 60 * 60) \
         + ((dt_target.minute - now.minute) * 60) \
-        + (dt_target.second - now.second)
+        + (dt_target.second - now.second) \
+        + 10
 
     return result if result > 0 else 0
 
 
 # returns the number of seconds until tomorrow
 def until_tomorrow():
-    return until(2359)
+    return until()
 
 
 # getting directory's absolute path in case it does not match CWD
